@@ -1,6 +1,35 @@
 <body class="bdy bg-seconday">
     <div class="container ">
       <h1 class="headone bg-success text-light text-center mt-5">LORNAS QUOTES APP</h1>
-
+      <div class="row">
+        <div class="col-md-4">
+          <app-form-input></app-form-input>
+        </div>
+        <div class="col-md-8 bg-grey mt-5">
+          <div class="card">
+            <div class="card-header">
+              <p>Posted by ;</p>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title text-uppercase">
+                </h5>
+              <p></p>
+              <p class="card-text"> <b>Author</b></p>
+              <p class="card-text">No of days:</p>
+              <div class="row">
+                <div class="col-md-4">
+                  <a (click)="thumbsup(i)"><i class="fas fa-thumbs-up"></i></a>
+                </div>
+                <div class="col-md-4">
+                  <a (click)="thumbsdown(i)"><i class="fas fa-thumbs-down"></i></a>
+                </div>
+                <div class="col-md-4">
+                  <a (click)=" delete(i)" class="btn btn-danger">Delete</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     </body>
