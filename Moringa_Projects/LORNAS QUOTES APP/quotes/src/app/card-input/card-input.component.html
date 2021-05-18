@@ -3,25 +3,25 @@
       <h1 class="headone bg-success text-light text-center mt-5">LORNAS QUOTES APP</h1>
       <div class="row">
         <div class="col-md-4">
-          <app-form-input></app-form-input>
+          <app-form-input (emitNewQuote)="saveQuote($event)"></app-form-input>
         </div>
         <div class="col-md-8 bg-grey mt-5">
-          <div class="card">
+          <div class="card" *ngFor="let quote of quotes; let i=index">
             <div class="card-header">
-              <p>Posted by ;</p>
+              <p>Posted by ;<b>{{quote.name}}</b></p>
             </div>
             <div class="card-body">
               <h5 class="card-title text-uppercase">
-                </h5>
-              <p></p>
-              <p class="card-text"> <b>Author</b></p>
-              <p class="card-text">No of days:</p>
+                {{quote.title}}</h5>
+              <p>{{quote.quote}}</p>
+              <p class="card-text"> <b>Author</b> {{quote.author}}</p>
+              <p class="card-text">No of days: {{quote.date | dateCount}}</p>
               <div class="row">
                 <div class="col-md-4">
-                  <a (click)="thumbsup(i)"><i class="fas fa-thumbs-up"></i></a>
+                  <a (click)="thumbsup(i)"><i class="fas fa-thumbs-up"></i></a>{{quote.thumbsup}}
                 </div>
                 <div class="col-md-4">
-                  <a (click)="thumbsdown(i)"><i class="fas fa-thumbs-down"></i></a>
+                  <a (click)="thumbsdown(i)"><i class="fas fa-thumbs-down"></i></a>{{quote.thumbsdown}}
                 </div>
                 <div class="col-md-4">
                   <a (click)=" delete(i)" class="btn btn-danger">Delete</a>
